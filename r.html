@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="new">
+        <!-- <input type="text" id="new"> -->
+
+    </div>
+    <input type="text" name="" id="input1"><button id="bt1">Button1</button>
+    <input type="text" name="" id="input2"><button id="bt2">Button2</button>
+    <button id="bt3">Button3</button>
+    <script>
+        document.getElementById('bt1').addEventListener('click', function () {
+            const p = document.getElementById('input1')
+            p.innerText = p.value;
+            console.log(p.value)
+            p.value = '';
+
+        })
+        document.getElementById('bt2').addEventListener('click', function () {
+            const p2 = document.getElementById('input2');
+            p2.innerText = p2.value;
+            console.log(p2.value);
+            p2.value = '';
+        })
+        document.getElementById('bt3').addEventListener('click', function () {
+            const p3 = document.getElementById('input1');
+            p3.innerText = p3.value;
+
+            const p4 = document.getElementById('input2');
+            p4.innerText = p4.value;
+            const total = p3.value + ' ' + p4.value
+            p3.value = '';
+            p4.value = '';
+            console.log(total)
+            const new1 = document.getElementById('new');
+            const new2 = document.createElement('p');
+            new2.innerText = total;
+            new1.appendChild(new2);
+
+
+            // return total;
+
+
+        })
+    </script>
+</body>
+
+</html>
