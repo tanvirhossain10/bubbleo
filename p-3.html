@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Adding to your new comment</h2>
+    <section>
+        <div id="div1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dolore magni optio facere explicabo
+                necessitatibus quidem cumque fuga sed sint et illum, accusantium rerum molestiae similique aperiam!
+                Unde, cumque perspiciatis?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aut nobis earum deserunt, cum cumque,
+                quisquam vitae architecto sapiente harum unde ea illo excepturi optio consectetur repellat, repellendus
+                quia voluptatum.</p>
+            <textarea name="" id="type" cols="30" rows="10" placeholder="Please type your comment"></textarea>
+            <button id="btn">button</button>
+        </div>
+        <div></div>
+    </section>
+    <script>
+        document.getElementById('btn').addEventListener('click', function () {
+            const p = document.createElement('p');
+            const input = document.getElementById('type');
+            p.innerText = input.value;
+            console.log(p)
+            const div1 = document.getElementById('div1')
+            div1.appendChild(p)
+            input.value = '';
+        })
+    </script>
+</body>
+
+</html>

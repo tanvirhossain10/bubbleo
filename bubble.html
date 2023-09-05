@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Event Bubble vai</h2>
+    <section id="section">
+        <h4>Bubble vai list</h4>
+        <!-- ul#list-cotainer>li.item*6>lorem2 -->
+        <ul id="list-cotainer">
+            <li class="item">Lorem, ipsum.</li>
+            <li id="second-item" class="item">Delectus, necessitatibus.</li>
+            <li class="item">Fugit, sapiente?</li>
+            <li class="item">Itaque, ducimus?</li>
+            <li class="item">Iusto, repudiandae.</li>
+            <li class="item">Ipsam, placeat.</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('second-item').addEventListener('click', function (event) {
+            console.log('second item');
+            event.stopImmediatePropagation();
+        })
+        //ul
+        document.getElementById('list-cotainer').addEventListener('click', function () {
+            console.log(' ul second item')
+        })
+        //section
+        document.getElementById('section').addEventListener('click', function () {
+            console.log(' section')
+        })
+    </script>
+</body>
+
+</html>

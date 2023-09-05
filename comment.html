@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <H2>Add your comment please</H2>
+    <section>
+        <h4>Your comment container</h4>
+        <div id="comment-container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quasi accusantium qui dolorem, natus
+                itaque exercitationem dicta nisi reiciendis, modi ratione expedita libero nesciunt totam illum
+                consectetur animi maxime saepe?</p>
+            <p>Officia, harum. Porro necessitatibus nam quisquam sapiente! Expedita quas, maxime blanditiis quod nisi
+                modi mollitia omnis est ipsum error ipsa sapiente nihil distinctio nobis aperiam reiciendis quaerat
+                temporibus accusantium laboriosam!</p>
+            <p>Provident, dicta quam. At aliquam repellendus officiis impedit fuga facilis nobis atque incidunt amet. Ex
+                odio facilis, voluptate odit maiores fugiat iusto vero beatae dicta fugit praesentium facere distinctio
+                dolor.</p>
+        </div>
+        <div>
+            <p>Add your comment please</p>
+            <textarea name="" id="new-comment" cols="60" rows="4"></textarea><br><br>
+            <button id="submit-comment">Post</button>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('submit-comment').addEventListener('click', function () {
+            console.log('clickes')
+            const commentText = document.getElementById('new-comment');
+            // console.log(commentText.value)
+            // const userComment = commentText.value;
+            // create paragraph
+            const p = document.createElement('p');
+            p.innerText = commentText.value
+            //append the comment
+            const commentContainer = document.getElementById('comment-container');
+            commentContainer.appendChild(p);
+            //cleat the comment box
+            commentText.value = '';
+        })
+    </script>
+</body>
+
+
+</html>

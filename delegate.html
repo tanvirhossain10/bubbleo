@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Event Delegate</h2>
+    <ul id="item-container">
+        <li class="item">Lorem, ipsum.</li>
+        <li class="item">Odio, ab.</li>
+        <li class="item">Voluptates, asperiores.</li>
+        <li class="item">Excepturi, harum?</li>
+        <li class="item">Repellendus, unde.</li>
+        <li class="item">Dignissimos, quos.</li>
+    </ul>
+    <button id="add-item">
+        Add item
+    </button>
+    <script>
+        const items = document.getElementsByClassName('item');
+        // console.log(items);
+        for (const item of items) {
+            item.addEventListener('click', function (event) {
+                // console.log('remove')
+
+                // document.getElementById('item-container').removeChild(item);
+                event.target.parentNode.removeChild(event.target)
+            })
+        };
+
+        document.getElementById('add-item').addEventListener('click', function () {
+            const li = document.createElement('li');
+            li.innerText = 'Brand new item';
+            li.classList.add('item')
+            const parent = document.getElementById('item-container');
+            parent.appendChild(li);
+            const items = document.getElementsByClassName('item')
+
+            for (const item of items) {
+                item.addEventListener('click', function (event) {
+                    // console.log('remove')
+
+                    // document.getElementById('item-container').removeChild(item);
+                    event.target.parentNode.removeChild(event.target)
+                })
+            }
+
+
+
+
+
+        });
+
+        // document.getElementById('item-container').addEventListener('click', function (event) {
+        //     // console.log(event.target)
+
+        //     // console.log(event.target)
+        //     event.target.parentNode.removeChild(event.target)
+        //     // event.target.parentNode.removeChild(event.target);
+        // })
+    </script>
+</body>
+
+</html>
